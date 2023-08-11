@@ -1,0 +1,43 @@
+{
+  "name": "openstreetmap-node",
+  "version": "1.0.0",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "yarn clean && tsc",
+    "start": "node dist/src/index.js",
+    "dev": "yarn build && cross-env NODE_ENV=development yarn start",
+    "gen": "yarn build",
+    "watch": "cross-env NODE_ENV=development nodemon",
+    "format": "prettier --check --write src",
+    "lint": "eslint . --ext .ts",
+    "prepare": "yarn build && yarn gen",
+    "version": "yarn format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.9",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.47.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.1",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "dts-dom": "^3.7.0"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/christianobora/openstreetmap-node.git"
+  }
+}
