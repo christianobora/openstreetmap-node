@@ -9,12 +9,12 @@ This package provides a simple wrapper for the usage of OpenStreetMap API in Nod
 
 ### Installation
 ```
-yarn add openstreetmap-node
+yarn add openstreetmap-tools
 ```
 
 ### Initialize Client
 ```ts
-import { OpenStreetMap } from "openstreetmap-node";
+import { OpenStreetMap } from "openstreetmap-tools";
 
 const client = new OpenStreetMap();
 ```
